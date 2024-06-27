@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Insight AI</title>
+    <link rel="stylesheet" href="/static/style2.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #5f4bb6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #6a4bb6;
+            padding: 10px 0;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+        .card h2 {
+            margin: 0 0 10px;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .card a {
+            display: block;
+            color: #5f4bb6;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .summary-area {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .summary-area textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .summary-area button {
+            padding: 10px 20px;
+            background-color: #5f4bb6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .summary-result {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Resources - Insight AI</h1>
+    </div>
+    <div class="nav">
+        <a href="student.html">Dashboard</a>
+        <a href="assignments.html">Assignments</a>
+        <a href="resources.html">Resources</a>
+        <a href="messages.html">Messages</a>
+        <a href="profile.html">Profile</a>
+        <a href="parent_login.html">Parent Login</a>
+    </div>
+    <div class="content">
+        <div class="card">
+            <h2>Chat Bot</h2>
+            <img src="chatbot_icon.png" alt="Chat Bot Icon">
+            <a href="chatbot.html">Start Chat</a>
+        </div>
+        <div class="card">
+            <h2>Videos</h2>
+            <img src="video_icon.png" alt="Video Icon">
+            <a href="videos.html">Watch Videos</a>
+        </div>
+        <div class="card">
+            <h2>Notes</h2>
+            <img src="notes_icon.png" alt="Notes Icon">
+            <a href="notes.html">View Notes</a>
+        </div>
+        <div class="card" id="summary-card">
+            <h2>Summary Generation</h2>
+            <img src="summary_icon.png" alt="Summary Icon">
+            <a href="#" id="summary-link">Generate Summary</a>
+        </div>
+    </div>
+    <div class="summary-area" id="summary-area">
+        <input type="file" id="fileInput" accept="application/pdf">
+        <button onclick="uploadAndSummarize()">Generate Summary</button>
+    </div>
+    <div class="summary-result" id="summary-result" style="display: none;">
+        <h3>Summary:</h3>
+        <p id="summary-text"></p>
+    </div>
+
+    <script>
+        document.getElementById('summary-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('summary-area').style.display = 'flex';
+        });
+
+        function uploadAndSummarize() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please select a PDF file to summarize.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/upload', { // Replace with your backend endpoint
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const summaryResult = document.getElementById('summary-result');
+                const summaryText = document.getElementById('summary-text');
+                summaryText.textContent = data.summary; // Assuming the backend returns a JSON with 'summary'
+                summaryResult.style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while summarizing the PDF.');
+            });
+        }
+    </script>
+</body>
+</html>
