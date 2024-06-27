@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/static/style4.css">
+</head>
+
+<body>
+    <nav>
+        <div class="part1">
+            <a href="{{ url_for('pindex') }}" class="logo">
+                <img src="/static/icon.png" alt="">Insight AI</a>
+            <a href="{{ url_for('pdashboard') }}">Dashboard</a>
+            <a href="{{ url_for('passignments') }}">Assignments</a>
+            <a href="{{ url_for('presources') }}">Resources</a>
+            <a href="{{ url_for('pmessages') }}">Messages</a>
+            <a href="{{ url_for('pprofile') }}">Profile</a>
+        </div>
+        <div class="part2">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="profile-header">
+            <h1>Profile</h1>
+        </div>
+        <div class="profile-content">
+            <div class="card">
+                <h2>Personal Information</h2>
+                <p>Parent Name: John Doe</p>
+                <p>Email: john.doe@example.com</p>
+                <p>Phone: +1-234-567-890</p>
+                <p>Address: 123 Main Street, Anytown, USA</p>
+            </div>
+            <div class="card">
+                <h2>Child's Profile Overview</h2>
+                <p>Name: Jane Doe</p>
+                <p>Grade: 5</p>
+                <p>Recent Activities: Completed Math Assignment, Attended Science Webinar</p>
+                <p>Progress: Math: 85%, Science: 90%, English: 78%</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

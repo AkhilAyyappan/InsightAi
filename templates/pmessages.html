@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="/static/style4.css">
+</head>
+
+<body>
+    <nav>
+        <div class="part1">
+            <a href="{{ url_for('pindex') }}" class="logo">
+                <img src="/static/icon.png" alt="">Insight AI</a>
+            <a href="{{ url_for('pdashboard') }}">Dashboard</a>
+            <a href="{{ url_for('passignments') }}">Assignments</a>
+            <a href="{{ url_for('presources') }}">Resources</a>
+            <a href="{{ url_for('pmessages') }}">Messages</a>
+            <a href="{{ url_for('pprofile') }}">Profile</a>
+        </div>
+        <div class="part2">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="messages-header">
+            <h1>Messages</h1>
+        </div>
+        <div class="messages-content">
+            <div class="messages-section">
+                <h2>New Messages</h2>
+                <div class="message-card">
+                    <h3>From: Teacher A</h3>
+                    <p>Hi, please review the latest assignment...</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="message-card">
+                    <h3>From: Teacher B</h3>
+                    <p>Reminder about the upcoming test...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="messages-section">
+                <h2>Older Messages</h2>
+                <div class="message-card">
+                    <h3>From: Teacher C</h3>
+                    <p>Great job on the last assignment...</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="message-card">
+                    <h3>From: Teacher D</h3>
+                    <p>Don't forget to submit your project...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

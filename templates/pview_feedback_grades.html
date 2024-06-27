@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Feedback & Grades</title>
+    <link rel="stylesheet" href="/static/style4.css">
+</head>
+
+<body>
+    <nav>
+        <div class="part1">
+            <a href="{{ url_for('pindex') }}" class="logo">
+                <img src="/static/icon.png" alt="">Insight AI</a>
+            <a href="{{ url_for('pdashboard') }}">Dashboard</a>
+            <a href="{{ url_for('passignments') }}">Assignments</a>
+            <a href="{{ url_for('presources') }}">Resources</a>
+            <a href="{{ url_for('pmessages') }}">Messages</a>
+            <a href="{{ url_for('pprofile') }}">Profile</a>
+        </div>
+        <div class="part2">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="feedback-header">
+            <h1>Feedback and Grades</h1>
+        </div>
+        <div class="feedback-content">
+            <div class="feedback-card">
+                <h2>Math Assignment</h2>
+                <p>Grade: A</p>
+                <p>Feedback: Excellent work! Your problem-solving skills are impressive.</p>
+            </div>
+            <div class="feedback-card">
+                <h2>Science Project</h2>
+                <p>Grade: B+</p>
+                <p>Feedback: Good effort, but try to provide more detailed explanations in your report.</p>
+            </div>
+            <div class="feedback-card">
+                <h2>English Essay</h2>
+                <p>Grade: B</p>
+                <p>Feedback: Well-written essay, but make sure to proofread for grammar mistakes.</p>
+            </div>
+            <div class="feedback-card">
+                <h2>History Test</h2>
+                <p>Grade: A+</p>
+                <p>Feedback: Great understanding of the historical events, keep up the good work!</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Submissions</title>
+    <link rel="stylesheet" href="/static/style4.css">
+</head>
+
+<body>
+    <nav>
+        <div class="part1">
+            <a href="{{ url_for('pindex') }}" class="logo">
+                <img src="/static/icon.png" alt="">Insight AI</a>
+            <a href="{{ url_for('pdashboard') }}">Dashboard</a>
+            <a href="{{ url_for('passignments') }}">Assignments</a>
+            <a href="{{ url_for('presources') }}">Resources</a>
+            <a href="{{ url_for('pmessages') }}">Messages</a>
+            <a href="{{ url_for('pprofile') }}">Profile</a>
+        </div>
+        <div class="part2">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="assignments-header">
+            <h1>Submitted Assignments</h1>
+        </div>
+        <div class="assignments-content">
+            <div class="assignment-card">
+                <h2>Math Assignment</h2>
+                <p>Submitted on: 2024-06-01</p>
+                <p>Status: Graded</p>
+                <p>Grade: A</p>
+                <button>View Details</button>
+            </div>
+            <div class="assignment-card">
+                <h2>Science Project</h2>
+                <p>Submitted on: 2024-06-10</p>
+                <p>Status: Pending</p>
+                <button>View Details</button>
+            </div>
+            <div class="assignment-card">
+                <h2>English Essay</h2>
+                <p>Submitted on: 2024-06-15</p>
+                <p>Status: Graded</p>
+                <p>Grade: B+</p>
+                <button>View Details</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

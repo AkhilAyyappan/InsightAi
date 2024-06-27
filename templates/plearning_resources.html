@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Resources</title>
+    <link rel="stylesheet" href="/static/style4.css">
+</head>
+
+<body>
+    <nav>
+        <div class="part1">
+            <a href="{{ url_for('pindex') }}" class="logo">
+                <img src="/static/icon.png" alt="">Insight AI</a>
+            <a href="{{ url_for('pdashboard') }}">Dashboard</a>
+            <a href="{{ url_for('passignments') }}">Assignments</a>
+            <a href="{{ url_for('presources') }}">Resources</a>
+            <a href="{{ url_for('pmessages') }}">Messages</a>
+            <a href="{{ url_for('pprofile') }}">Profile</a>
+        </div>
+        <div class="part2">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="resourcesheader">
+            <h1>Learning Resources</h1>
+        </div>
+        <div class="resourcescontent">
+            <div class="subject-card">
+                <h2>Math</h2>
+                <ul>
+                    <li><a href="math_video1.mp4" target="_blank">Video: Algebra Basics</a></li>
+                    <li><a href="math_material1.pdf" target="_blank">Material: Algebra Basics Notes</a></li>
+                </ul>
+            </div>
+            <div class="subject-card">
+                <h2>Science</h2>
+                <ul>
+                    <li><a href="science_video1.mp4" target="_blank">Video: Introduction to Biology</a></li>
+                    <li><a href="science_material1.pdf" target="_blank">Material: Biology Notes</a></li>
+                </ul>
+            </div>
+            <div class="subject-card">
+                <h2>English</h2>
+                <ul>
+                    <li><a href="english_video1.mp4" target="_blank">Video: Grammar Basics</a></li>
+                    <li><a href="english_material1.pdf" target="_blank">Material: Grammar Basics Notes</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

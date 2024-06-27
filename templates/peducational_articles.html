@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Articles</title>
+    <link rel="stylesheet" href="/static/style4.css">
+</head>
+
+<body>
+    <nav>
+        <div class="part1">
+            <a href="{{ url_for('pindex') }}" class="logo">
+                <img src="/static/icon.png" alt="">Insight AI</a>
+            <a href="{{ url_for('pdashboard') }}">Dashboard</a>
+            <a href="{{ url_for('passignments') }}">Assignments</a>
+            <a href="{{ url_for('presources') }}">Resources</a>
+            <a href="{{ url_for('pmessages') }}">Messages</a>
+            <a href="{{ url_for('pprofile') }}">Profile</a>
+        </div>
+        <div class="part2">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="articles-header">
+            <h1>Educational Articles</h1>
+        </div>
+        <div class="articles-content">
+            <div class="article-card">
+                <h2>Understanding Algebra</h2>
+                <p>Algebra is a branch of mathematics that deals with symbols and the rules for manipulating those symbols. In algebra, those symbols (today written as Latin and Greek letters) represent quantities without fixed values, known as variables.</p>
+                <a href="algebra_article.pdf" target="_blank">Read More</a>
+            </div>
+            <div class="article-card">
+                <h2>The Basics of Biology</h2>
+                <p>Biology is the natural science that studies life and living organisms, including their physical structure, chemical processes, molecular interactions, physiological mechanisms, development, and evolution.</p>
+                <a href="biology_article.pdf" target="_blank">Read More</a>
+            </div>
+            <div class="article-card">
+                <h2>Improving Your English Grammar</h2>
+                <p>English grammar is the set of structural rules governing the composition of clauses, phrases, and words in the English language. Good grammar is essential for effective communication and academic success.</p>
+                <a href="english_grammar_article.pdf" target="_blank">Read More</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

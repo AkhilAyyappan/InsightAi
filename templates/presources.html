@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link rel="stylesheet" href="/static/style4.css">
+</head>
+
+<body>
+    <nav>
+        <div class="part1">
+            <a href="{{ url_for('pindex') }}" class="logo">
+                <img src="/static/icon.png" alt="">Insight AI</a>
+            <a href="{{ url_for('pdashboard') }}">Dashboard</a>
+            <a href="{{ url_for('passignments') }}">Assignments</a>
+            <a href="{{ url_for('presources') }}">Resources</a>
+            <a href="{{ url_for('pmessages') }}">Messages</a>
+            <a href="{{ url_for('pprofile') }}">Profile</a>
+        </div>
+        <div class="part2">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="resources-header">
+            <h1>Resources</h1>
+        </div>
+        <div class="resources-content">
+            <div class="card">
+                <h2>Learning Resources</h2>
+                <button onclick="location.href='{{ url_for('plearning_resources') }}'">Access Learning Resources</button>
+            </div>
+            <div class="card">
+                <h2>Educational Articles</h2>
+                <button onclick="location.href='{{ url_for('peducational_articles') }}'">Read Articles</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
