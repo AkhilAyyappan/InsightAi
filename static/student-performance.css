@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    letter-spacing: 0.1px;
+}
+
+nav {
+    height: 9vh;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(90, 90, 213);
+    width: 100%;
+}
+.logo {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    width: 45px;
+    object-fit: cover;
+}
+
+.part1 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    width: 50%;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.student-list, .student-details {
+    background-color: #F0F4F7;
+    padding: 20px;
+    border-radius: 0.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: 10px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.student-list ul {
+    list-style-type: none;
+}
+
+.student-list ul li {
+    margin-bottom: 10px;
+}
+
+.student-list ul li a {
+    color: rgb(90, 90, 213);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.student-details .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.student-details .details img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.student-details .grades, .attendance, .behavior {
+    margin-top: 20px;
+}
+
+.logout-btn {
+    background: #fff;
+    color: #445ce1;
+    border: 1px solid #445ce1;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+.logout-btn:hover {
+    background: #445ce1;
+    color: #fff;
+}

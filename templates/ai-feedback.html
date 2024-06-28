@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Feedback on Assignment</title>
+    <link rel="stylesheet" href="/static/ai-feedback.css">
+</head>
+<body>
+    <div class="flex">
+        <nav>
+            <div class="logo">
+                <img src="icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
+                <span>Feedback</span>
+            </div>
+            <div class="part1">
+                <a href="{{ url_for('teacher') }}">Home</a>
+                <a href="#">Classes</a>
+                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="#">Reports</a>
+                <a href="#">Notifications</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="header">
+                <h1>AI Feedback on Assignment</h1>
+            </div>
+            <div class="content">
+                <form action="#" method="post" class="feedback-form">
+                    <label for="assignment-text">Assignment Text</label>
+                    <textarea id="assignment-text" name="assignment-text" rows="10" required></textarea>
+
+                    <div class="button-container">
+                        <button type="button" class="ai-feedback-btn" onclick="generateFeedback()">Generate AI Feedback</button>
+                    </div>
+
+                    <div class="feedback-output" id="feedback-output">
+                        <h2>Generated Questions</h2>
+                        <ul id="questions-list">
+                            <!-- Generated questions will appear here -->
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateFeedback() {
+            // Simulate AI-generated questions based on the assignment text
+            const questions = [
+                "What is the main topic of the assignment?",
+                "Can you summarize the key points?",
+                "What are the implications of the topic discussed?",
+                "What examples can you provide to support the main arguments?"
+            ];
+
+            const questionsList = document.getElementById('questions-list');
+            questionsList.innerHTML = '';
+            questions.forEach(question => {
+                const li = document.createElement('li');
+                li.textContent = question;
+                questionsList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resources</title>
+    <link rel="stylesheet" href="/static/upload-resources.css">
+</head>
+<body>
+    <div class="flex">
+        <nav>
+            <div class="logo">
+                <img src="icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
+                <span>Resorces</span>
+            </div>
+            <div class="part1">
+                <a href="{{ url_for('teacher') }}">Home</a>
+                <a href="#">Classes</a>
+                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="#">Reports</a>
+                <a href="#">Notifications</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="header">
+                <h1>Upload Resources</h1>
+            </div>
+            <div class="content">
+                <form action="#" method="post" class="upload-form" enctype="multipart/form-data">
+                    <label for="resource-title">Resource Title</label>
+                    <input type="text" id="resource-title" name="resource-title" required>
+
+                    <label for="resource-description">Resource Description</label>
+                    <textarea id="resource-description" name="resource-description" rows="4" required></textarea>
+
+                    <label for="resource-file">Upload File</label>
+                    <input type="file" id="resource-file" name="resource-file" required>
+
+                    <div class="button-container">
+                        <button type="submit" class="upload-btn">Upload Resource</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Library</title>
+    <link rel="stylesheet" href="/static/resource-library.css">
+</head>
+<body>
+    <div class="flex">
+        <nav>
+            <div class="logo">
+                <img src="icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
+                <span>Resource</span>
+            </div>
+            <div class="part1">
+                <a href="{{ url_for('teacher') }}">Home</a>
+                <a href="#">Classes</a>
+                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="#">Reports</a>
+                <a href="#">Notifications</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="header">
+                <h1>Resource Library</h1>
+            </div>
+            <div class="content">
+                <div class="resource-item">
+                    <h2>Resource Title 1</h2>
+                    <p>Description of resource 1.</p>
+                    <div class="resource-actions">
+                        <button class="view-btn">View</button>
+                        <button class="download-btn">Download</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <h2>Resource Title 2</h2>
+                    <p>Description of resource 2.</p>
+                    <div class="resource-actions">
+                        <button class="view-btn">View</button>
+                        <button class="download-btn">Download</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+                <!-- Add more resource items as needed -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

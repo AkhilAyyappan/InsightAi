@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Timetable</title>
+    <link rel="stylesheet" href="/static/timetable.css">
+</head>
+<body>
+    <div class="flex">
+        <nav>
+            <div class="logo">
+                <img src="icon.png" alt="Logo">
+                <span>Timetable</span>
+            </div>
+            <div class="part1">
+                <a href="{{ url_for('teacher') }}l">Home</a>
+                <a href="#">Classes</a>
+                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="#">Reports</a>
+                <a href="#">Notifications</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="content">
+                <h1>Timetable</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08:00 - 09:00</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                            <td>History</td>
+                            <td>English</td>
+                            <td>Geography</td>
+                        </tr>
+                        <tr>
+                            <td>09:00 - 10:00</td>
+                            <td>Physics</td>
+                            <td>Math</td>
+                            <td>English</td>
+                            <td>Science</td>
+                            <td>History</td>
+                        </tr>
+                        <tr>
+                            <td>10:00 - 11:00</td>
+                            <td>English</td>
+                            <td>Geography</td>
+                            <td>Math</td>
+                            <td>History</td>
+                            <td>Physics</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

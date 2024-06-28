@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Learning Materials</title>
+    <link rel="stylesheet" href="/static/share-learning-materials.css">
+</head>
+<body>
+    <div class="flex">
+        <nav>
+            <div class="logo">
+                <img src="icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
+                <span>Resources</span>
+            </div>
+            <div class="part1">
+                <a href="{{ url_for('teacher') }}">Home</a>
+                <a href="#">Classes</a>
+                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="#">Reports</a>
+                <a href="#">Notifications</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="header">
+                <h1>Share Learning Materials</h1>
+            </div>
+            <div class="content">
+                <form action="#" method="post" class="share-form">
+                    <label for="material-title">Material Title</label>
+                    <input type="text" id="material-title" name="material-title" required>
+
+                    <label for="material-description">Material Description</label>
+                    <textarea id="material-description" name="material-description" rows="4" required></textarea>
+
+                    <label for="material-link">Material Link</label>
+                    <input type="url" id="material-link" name="material-link" required>
+
+                    <div class="button-container">
+                        <button type="submit" class="share-btn">Share Material</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

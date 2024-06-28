@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Assignments</title>
+    <link rel="stylesheet" href="/static/grade-assignments.css">
+</head>
+<body>
+    <div class="flex">
+        <nav>
+            <div class="logo">
+                <img src="icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
+                <span>Grade</span>
+            </div>
+            <div class="part1">
+                <a href="{{ url_for('teacher') }}">Home</a>
+                <a href="#">Classes</a>
+                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="#">Reports</a>
+                <a href="#">Notifications</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="header">
+                <h1>Grade Assignments</h1>
+            </div>
+            <div class="content">
+                <form action="#" method="post" class="grading-form">
+                    <label for="assignment">Select Assignment</label>
+                    <select id="assignment" name="assignment" required>
+                        <option value="" disabled selected>Select an assignment</option>
+                        <!-- Options will be populated dynamically -->
+                        <option value="assignment1">Assignment 1</option>
+                        <option value="assignment2">Assignment 2</option>
+                    </select>
+
+                    <label for="student">Select Student</label>
+                    <select id="student" name="student" required>
+                        <option value="" disabled selected>Select a student</option>
+                        <!-- Options will be populated dynamically -->
+                        <option value="student1">Student 1</option>
+                        <option value="student2">Student 2</option>
+                    </select>
+
+                    <label for="grade">Grade</label>
+                    <input type="text" id="grade" name="grade" required>
+
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" name="comments" rows="4" required></textarea>
+
+                    <div class="button-container">
+                        <button type="button" class="ai-grade-btn" onclick="generateGrade()">Generate AI Grade</button>
+                        <button type="submit" class="submit-btn">Submit Grade</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateGrade() {
+            // Simulate AI-generated grade
+            const aiGeneratedGrade = Math.floor(Math.random() * (100 - 50 + 1)) + 50; // Generate a random grade between 50 and 100
+            document.getElementById('grade').value = aiGeneratedGrade;
+        }
+    </script>
+</body>
+</html>

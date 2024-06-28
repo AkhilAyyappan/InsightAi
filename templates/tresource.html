@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Resource Page</title>
+    <link rel="stylesheet" href="/static/resource.css">
+</head>
+<body>
+    <div class="flex">
+        <nav>
+            <div class="logo">
+                <img src="icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
+                <span>Resources</span>
+            </div>
+            <div class="part1">
+                <a href="{{ url_for('teacher') }}">Home</a>
+                <a href="#">Classes</a>
+                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="#">Reports</a>
+                <a href="#">Notifications</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row1 flex">
+                <h1>Resources</h1>
+            </div>
+            <div class="row2">
+                <div class="cards">
+                    <button class="nav-btn" onclick="navigateTo('{{ url_for('upload_resources') }}')">Upload Resources</button>
+                </div>
+                <div class="cards">
+                    <button class="nav-btn" onclick="navigateTo('{{ url_for('share_learning_material') }}')">Share Learning Materials</button>
+                </div>
+                <div class="cards">
+                    <button class="nav-btn" onclick="navigateTo('{{ url_for('resource_library') }}')">Resource Library</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Assignments</title>
+    <link rel="stylesheet" href="/static/create-assignments.css">
+</head>
+<body>
+    <div class="flex">
+        <nav>
+            <div class="logo">
+                <img src="icon.png" alt="Logo"> <!-- Replace "logo.png" with your logo image link -->
+                <span>Assignment</span>
+            </div>
+            <div class="part1">
+                <a href="{{ url_for('teacher') }}">Home</a>
+                <a href="#">Classes</a>
+                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="#">Reports</a>
+                <a href="#">Notifications</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="header">
+                <h1>Create Assignments</h1>
+            </div>
+            <div class="content">
+                <form action="#" method="post" class="assignment-form">
+                    <label for="title">Assignment Title</label>
+                    <input type="text" id="title" name="title" required>
+
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+
+                    <label for="due-date">Due Date</label>
+                    <input type="date" id="due-date" name="due-date" required>
+
+                    <label for="file-upload">Upload Files</label>
+                    <input type="file" id="file-upload" name="file-upload" multiple>
+
+                    <button type="submit" class="submit-btn">Create Assignment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

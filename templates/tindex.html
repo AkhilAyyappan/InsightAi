@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="part1">
+            <a href="#" class="logo">
+                <img src="icon.png" alt="">Insight AI</a>
+            <a href="{{ url_for('teacher') }}">Dashboard</a>
+            <a href="{{ url_for('assign') }}">Assignments</a>
+            <a href="{{ url_for('tresource') }}">Resources</a>
+            <a href="#">Messages</a>
+            <a href="#">Profile</a>
+        </div>
+        <div class="part2">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row1">
+            <h1>Welcome to Insight AI</h1>
+            <h2>Teacher Login</h2>
+            <img src="img.webp" alt="">
+        </div>
+        <div class="row2">
+            <div class="cards flex">
+                <h1>Dashboard</h1>
+                <button>Go to Dashboard</button>
+            </div>
+            <div class="cards flex">
+                <h1>Assignments</h1>
+                <button>View Assignments</button>
+            </div>
+            <div class="cards flex">
+                <h1>Resources</h1>
+                <button>Access Resources</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

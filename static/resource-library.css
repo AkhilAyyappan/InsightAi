@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    letter-spacing: 0.1px;
+}
+
+nav {
+    height: 9vh;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(90, 90, 213);
+    width: 100%;
+}
+.logo {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    width: 45px;
+    object-fit: cover;
+}
+
+.part1 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.resource-item {
+    background-color: #F0F4F7;
+    padding: 20px;
+    border-radius: 0.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.resource-item h2 {
+    font-size: 24px;
+}
+
+.resource-item p {
+    font-size: 18px;
+    color: #555;
+}
+
+.resource-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.view-btn,
+.download-btn,
+.delete-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-btn {
+    background-color: #445ce1;
+}
+
+.view-btn:hover {
+    background-color: #354ab2;
+}
+
+.download-btn {
+    background-color: #28a745;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.logout-btn {
+    background: #fff;
+    color: #445ce1;
+    border: 1px solid #445ce1;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.logout-btn:hover {
+    background: #445ce1;
+    color: #fff;
+}
