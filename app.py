@@ -2,6 +2,24 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
+# Login route
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        user_type = request.form.get('user-type')
+        username = request.form.get('username')
+        password = request.form.get('password')
+        if user_type == 'student':
+            return redirect(url_for('index'))
+        elif user_type == 'parent':
+            return redirect(url_for('pindex'))
+        elif user_type == 'teacher':
+            return redirect(url_for('tindex'))
+        else:
+            return redirect(url_for('login'))
+    return render_template('login.html')
+
 # Parent routes
 @app.route('/pindex')
 def pindex():
@@ -61,23 +79,57 @@ def assignments():
 def resources():
     return render_template('resources.html')
 
+#teacher routes
 
+@app.route('/tindex')
+def tindex():
+    return render_template('tindex.html')
 
-# Login route
-@app.route('/', methods=['GET', 'POST'])
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        user_type = request.form.get('user-type')
-        username = request.form.get('username')
-        password = request.form.get('password')
-        if user_type == 'student':
-            return redirect(url_for('index'))
-        elif user_type == 'parent':
-            return redirect(url_for('pindex'))
-        else:
-            return redirect(url_for('login'))
-    return render_template('login.html')
+@app.route('/teacher')
+def teacher():
+    return render_template('teacher.html')
+
+@app.route('/assign')
+def assign():
+    return render_template('assign.html')
+
+@app.route('/timetable')
+def timetable():
+    return render_template('timetable.html')
+
+@app.route('/ai-feedback')
+def ai_feedback():
+    return render_template('ai-feedback.html')
+
+@app.route('/create-assignments')
+def create_assignments():
+    return render_template('create-assignments.html')
+
+@app.route('/grade-assignments')
+def grade_assignments():
+    return render_template('grade-assignments.html')
+
+@app.route('/resource-library')
+def resource_library():
+    return render_template('resource-library.html')
+
+@app.route('/tresource')
+def tresource():
+    return render_template('tresource.html')
+
+@app.route('/share-learning-material')
+def share_learning_material():
+    return render_template('share-learning-materials.html')
+
+@app.route('/upload_resources')
+def upload_resources():
+    return render_template('upload-resources.html')
+
+@app.route('/student-performance')
+def student_performance():
+    return render_template('student-performance.html')
+
+#logout route
 
 @app.route('/logout')
 def logout():
