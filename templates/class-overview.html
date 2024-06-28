@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Assignments</title>
-    <link rel="stylesheet" href="/static/create-assignments.css">
+    <title>Class Overview</title>
+    <link rel="stylesheet" href="/static/class-overview.css">
 </head>
 <body>
     <div class="flex">
         <nav>
             <div class="logo">
-                <img src="icon.png" alt="Logo"> <!-- Replace "logo.png" with your logo image link -->
-                <span>Assignment</span>
+                <img src="icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
+                <span>class overview</span>
             </div>
             <div class="part1">
-                <a href="{{ url_for('teacher') }}">Home</a>
+                <a href="{{ url_for('tindex') }}">Home</a>
                 <a href="#">Classes</a>
                 <a href="{{ url_for('timetable') }}">Timetable</a>
                 <a href="#">Reports</a>
@@ -24,24 +24,31 @@
         </nav>
         <div class="container">
             <div class="header">
-                <h1>Create Assignments</h1>
+                <h1>Class Overview</h1>
             </div>
             <div class="content">
-                <form action="#" method="post" class="assignment-form">
-                    <label for="title">Assignment Title</label>
-                    <input type="text" id="title" name="title" required>
-
-                    <label for="description">Description</label>
-                    <textarea id="description" name="description" rows="4" required></textarea>
-
-                    <label for="due-date">Due Date</label>
-                    <input type="date" id="due-date" name="due-date" required>
-
-                    <label for="file-upload">Upload Files</label>
-                    <input type="file" id="file-upload" name="file-upload" multiple>
-
-                    <button type="submit" class="submit-btn">Create Assignment</button>
-                </form>
+                <div class="class-list">
+                    <h2>Your Classes</h2>
+                    <ul>
+                        <li><a href="#">Class 1 - Mathematics</a></li>
+                        <li><a href="#">Class 2 - Science</a></li>
+                        <li><a href="#">Class 3 - History</a></li>
+                    </ul>
+                </div>
+                <div class="class-details">
+                    <h2>Class Details</h2>
+                    <div class="details">
+                        <p><strong>Class Name:</strong> Mathematics</p>
+                        <p><strong>Grade:</strong> 10</p>
+                        <p><strong>Subject:</strong> Algebra</p>
+                        <p><strong>Students:</strong> 30</p>
+                        <p><strong>Schedule:</strong> Monday, Wednesday, Friday - 10:00 AM to 11:00 AM</p>
+                    </div>
+                </div>
+                <div class="announcements">
+                    <h2>Announcements</h2>
+                    <p>No new announcements.</p>
+                </div>
             </div>
         </div>
     </div>

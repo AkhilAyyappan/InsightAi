@@ -85,10 +85,6 @@ def resources():
 def tindex():
     return render_template('tindex.html')
 
-@app.route('/teacher')
-def teacher():
-    return render_template('teacher.html')
-
 @app.route('/assign')
 def assign():
     return render_template('assign.html')
@@ -100,6 +96,10 @@ def timetable():
 @app.route('/ai-feedback')
 def ai_feedback():
     return render_template('ai-feedback.html')
+
+@app.route('/class-overview')
+def class_overview():
+    return render_template('class-overview.html')
 
 @app.route('/create-assignments')
 def create_assignments():

@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="/static/stylet.css">
 </head>
-
 <body>
-    <nav>
-        <div class="part1">
-            <a href="#" class="logo">
-                <img src="icon.png" alt="">Insight AI</a>
-            <a href="{{ url_for('teacher') }}">Dashboard</a>
-            <a href="{{ url_for('assign') }}">Assignments</a>
-            <a href="{{ url_for('tresource') }}">Resources</a>
-            <a href="#">Messages</a>
-            <a href="#">Profile</a>
-        </div>
-        <div class="part2">
-            <a href="{{ url_for('logout') }}">Logout</a>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row1">
-            <h1>Welcome to Insight AI</h1>
-            <h2>Teacher Login</h2>
-            <img src="img.webp" alt="">
-        </div>
-        <div class="row2">
-            <div class="cards flex">
-                <h1>Dashboard</h1>
-                <button>Go to Dashboard</button>
+    <div class="flex">
+        <nav>
+            <div class="logo">
+                <img src="/static/icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
+                <span>Teacher Dashboard</span>
             </div>
-            <div class="cards flex">
-                <h1>Assignments</h1>
-                <button>View Assignments</button>
+            <div class="part1">
+                <a href="{{ url_for('tindex') }}">Home</a>
+                <a href="{{ url_for('assign') }}">Assignments</a>
+                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="{{ url_for('tresource') }}">Resources</a>
+                <a href="#">Reports</a>
+                <a href="#">Notifications</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
             </div>
-            <div class="cards flex">
-                <h1>Resources</h1>
-                <button>Access Resources</button>
+        </nav>
+        <div class="container">
+            <div class="row1 flex">
+                <h1>Welcome, [Teacher Name]</h1>
+                <img src="/static/teacher.jpg" alt="Teacher Image"> <!-- Replace "teacher.png" with your teacher image link -->
+            </div>
+            <div class="row2">
+                <div class="cards">
+                    <button class="nav-btn" onclick="navigateTo('{{ url_for('class_overview') }}')">Class Overview</button>
+                </div>
+                <div class="cards">
+                    <button class="nav-btn" onclick="navigateTo('{{ url_for('student_performance') }}')">Student Performance</button>
+                </div>
+                <div class="cards">
+                    <button class="nav-btn" onclick="navigateTo('{{ url_for('assign') }}')">Assignment Management</button>
+                </div>
             </div>
         </div>
     </div>
-</body>
 
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
 </html>
