@@ -4,7 +4,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const userType = document.getElementById('user-type').value;
 
     if (userType === 'student') {
-        window.location.href = 'student_dashboard.html';
+        window.location.href = 'students.html';
     } else if (userType === 'teacher') {
         window.location.href = 'teacher_dashboard.html';
     } else if (userType === 'parent') {
