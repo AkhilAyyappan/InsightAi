@@ -14,12 +14,12 @@
                 <span>Assignment</span>
             </div>
             <div class="part1">
-                <a href="{{ url_for('tindex') }}">Home</a>
+                <a href="/tindex">Home</a>
                 <a href="#">Classes</a>
-                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="/timetable">Timetable</a>
                 <a href="#">Reports</a>
                 <a href="#">Notifications</a>
-                <a href="{{ url_for('logout') }}">Logout</a>
+                <a href="/logout">Logout</a>
             </div>
         </nav>
         <div class="container">
@@ -27,7 +27,7 @@
                 <h1>Create Assignments</h1>
             </div>
             <div class="content">
-                <form action="{{ url_for('create_assignments') }}" method="post" class="assignment-form" enctype="multipart/form-data">
+                <form action="/create_assignments" method="post" class="assignment-form" enctype="multipart/form-data">
                     <label for="title">Assignment Title</label>
                     <input type="text" id="title" name="title" required>
 

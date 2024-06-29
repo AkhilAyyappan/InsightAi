@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from werkzeug.utils import secure_filename
 import os
 
@@ -120,11 +120,11 @@ def assign():
 def timetable():
     return render_template('timetable.html')
 
-@app.route('/ai-feedback')
+@app.route('/ai_feedback')
 def ai_feedback():
     return render_template('ai-feedback.html')
 
-@app.route('/class-overview')
+@app.route('/class_overview')
 def class_overview():
     return render_template('class-overview.html')
 
@@ -158,11 +158,11 @@ def create_assignments():
         return redirect(url_for('create_assignments'))
     return render_template('create-assignments.html')
 
-@app.route('/grade-assignments')
+@app.route('/grade_assignments')
 def grade_assignments():
     return render_template('grade-assignments.html')
 
-@app.route('/resource-library')
+@app.route('/resource_library')
 def resource_library():
     return render_template('resource-library.html')
 
@@ -170,7 +170,7 @@ def resource_library():
 def tresource():
     return render_template('tresource.html')
 
-@app.route('/share-learning-material')
+@app.route('/share_learning_material')
 def share_learning_material():
     return render_template('share-learning-materials.html')
 
@@ -178,7 +178,7 @@ def share_learning_material():
 def upload_resources():
     return render_template('upload-resources.html')
 
-@app.route('/student-performance')
+@app.route('/student_performance')
 def student_performance():
     return render_template('student-performance.html')
 

@@ -14,13 +14,13 @@
                 <span>Teacher Dashboard</span>
             </div>
             <div class="part1">
-                <a href="{{ url_for('tindex') }}">Home</a>
-                <a href="{{ url_for('assign') }}">Assignments</a>
-                <a href="{{ url_for('timetable') }}">Timetable</a>
-                <a href="{{ url_for('tresource') }}">Resources</a>
+                <a href="/tindex">Home</a>
+                <a href="/assign">Assignments</a>
+                <a href="/timetable">Timetable</a>
+                <a href="/tresource">Resources</a>
                 <a href="#">Reports</a>
                 <a href="#">Notifications</a>
-                <a href="{{ url_for('logout') }}">Logout</a>
+                <a href="/logout">Logout</a>
             </div>
         </nav>
         <div class="container">
@@ -30,13 +30,13 @@
             </div>
             <div class="row2">
                 <div class="cards">
-                    <button class="nav-btn" onclick="navigateTo('{{ url_for('class_overview') }}')">Class Overview</button>
+                    <button class="nav-btn" onclick="navigateTo('/class_overview')">Class Overview</button>
                 </div>
                 <div class="cards">
-                    <button class="nav-btn" onclick="navigateTo('{{ url_for('student_performance') }}')">Student Performance</button>
+                    <button class="nav-btn" onclick="navigateTo('/student_performance')">Student Performance</button>
                 </div>
                 <div class="cards">
-                    <button class="nav-btn" onclick="navigateTo('{{ url_for('assign') }}')">Assignment Management</button>
+                    <button class="nav-btn" onclick="navigateTo('/assign')">Assignment Management</button>
                 </div>
             </div>
         </div>

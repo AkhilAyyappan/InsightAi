@@ -11,16 +11,16 @@
 <body>
     <nav>
         <div class="part1">
-            <a href="{{ url_for('pindex') }}" class="logo">
+            <a href="/pindex" class="logo">
                 <img src="/static/icon.png" alt="">Insight AI</a>
-            <a href="{{ url_for('pdashboard') }}">Dashboard</a>
-            <a href="{{ url_for('passignments') }}">Assignments</a>
-            <a href="{{ url_for('presources') }}">Resources</a>
-            <a href="{{ url_for('pmessages') }}">Messages</a>
-            <a href="{{ url_for('pprofile') }}">Profile</a>
+            <a href="/pdashboard">Dashboard</a>
+            <a href="/passignments">Assignments</a>
+            <a href="/presources">Resources</a>
+            <a href="/pmessages">Messages</a>
+            <a href="/pprofile">Profile</a>
         </div>
         <div class="part2">
-            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="/logout">Logout</a>
         </div>
     </nav>
     <div class="container">
@@ -30,11 +30,11 @@
         <div class="assignments-content">
             <div class="card">
                 <h2>Track Submission Status</h2>
-                <button onclick="location.href='{{ url_for('ptrack_submissions') }}'">Track Submissions</button>
+                <button onclick="location.href='/ptrack_submissions'">Track Submissions</button>
             </div>
             <div class="card">
                 <h2>View Feedback and Grades</h2>
-                <button onclick="location.href='{{ url_for('pview_feedback_grades') }}'">View Feedback & Grades</button>
+                <button onclick="location.href='pview_feedback_grades'">View Feedback & Grades</button>
             </div>
         </div>
     </div>
