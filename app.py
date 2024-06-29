@@ -1,6 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
+from werkzeug.utils import secure_filename
+import os
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
+# In-memory list to store assignments (replace with database in production)
+assignments_list = []
+uploaded_files = []
 
 # Login route
 @app.route('/', methods=['GET', 'POST'])
@@ -73,7 +79,28 @@ def dashboard():
 
 @app.route('/assignments')
 def assignments():
-    return render_template('assignments.html')
+    return render_template('assignments.html', assignments=assignments_list, uploaded_files=uploaded_files)
+
+@app.route('/submit_assignment', methods=['POST'])
+def submit_assignment():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part'}), 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+
+    assignment_title = request.form['assignment_title']
+    
+    filename = secure_filename(file.filename)
+    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+    # Update assignment status or perform other actions as needed
+    for assignment in assignments_list:
+        if assignment['title'] == assignment_title:
+            assignment['has_submission'] = True
+
+    return jsonify({'message': 'File uploaded successfully', 'filename': filename}), 200
 
 @app.route('/resources')
 def resources():
@@ -101,8 +128,34 @@ def ai_feedback():
 def class_overview():
     return render_template('class-overview.html')
 
-@app.route('/create-assignments')
+@app.route('/create_assignments', methods=['GET', 'POST'])
 def create_assignments():
+    if request.method == 'POST':
+        title = request.form['title']
+        description = request.form['description']
+        due_date = request.form['due-date']
+        
+        # Handle file upload
+        if 'file-upload' in request.files:
+            files = request.files.getlist('file-upload')
+            for file in files:
+                if file.filename != '':
+                    filename = secure_filename(file.filename)
+                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                    uploaded_files.append(filename)
+                    
+        files_for_assignment = uploaded_files[-1] if uploaded_files else None
+        
+        assignment = {
+            'title': title,
+            'description': description,
+            'due_date': due_date,
+            'files': files_for_assignment  # Attach uploaded file names to the assignment
+        }
+        assignments_list.insert(0,assignment)
+
+        
+        return redirect(url_for('create_assignments'))
     return render_template('create-assignments.html')
 
 @app.route('/grade-assignments')
