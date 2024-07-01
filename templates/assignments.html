@@ -57,6 +57,46 @@
             border-radius: 5px;
             background-color: white;
         }
+        .assignment-list {
+            margin-top: 20px;
+        }
+        .assignment-item {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            margin-bottom: 10px;
+        }
+        .file-list {
+            margin-top: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        #chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #chatbot-icon img {
+            width: 70%;
+            height: 70%;
+        }
+
+        #chatbot-icon:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -64,30 +104,54 @@
         <h1>Assignments - Insight AI</h1>
     </div>
     <div class="nav">
-        <a href="student.html">Dashboard</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="resources.html">Resources</a>
-        <a href="messages.html">Messages</a>
-        <a href="profile.html">Profile</a>
-        <a href="parent_login.html">Parent Login</a>
+        <a href="/students">Dashboard</a>
+        <a href="/assignments">Assignments</a>
+        <a href="/resources">Resources</a>
+        <a href="/messages">Messages</a>
+        <a href="/profile.html">Profile</a>
+        <a href="/login">logout</a>
     </div>
     <div class="content">
-        <div class="form-group">
-            <label for="assignment">Upload Assignment:</label>
-            <input type="file" id="assignment" accept=".pdf">
-        </div>
-        <div class="form-group">
-            <button onclick="submitAssignment()">Submit </button>
-        </div>
-        <div class="score-area" id="score-area" style="display: none;">
-            <h3>Your Score:</h3>
-            <p id="score-text"></p>
+        <div class="assignment-list">
+            <h2>Available Assignments</h2>
+            <div id="assignmentList">
+                {% for assignment in assignments %}
+                    <div class="assignment-item">
+                        <h3>{{ assignment.title }}</h3>
+                        <p>{{ assignment.description }}</p>
+                        <p>Due Date: {{ assignment.due_date }}</p>
+                        {% if assignment.files %}
+                            <div class="file-list">
+                                <h4>Files:</h4>
+                                <ul>
+                                    <a href="{{ url_for('static', filename='uploads/' + assignment.files) }}">{{ assignment.files }}</a>
+                                </ul>
+                            </div>
+                        {% endif %}
+                        {% if not assignment.has_submission %}
+                            <div class="form-group">
+                                <label for="submission-{{ loop.index }}">Upload Submission:</label>
+                                <input type="file" id="submission-{{ loop.index }}" accept=".pdf">
+                                <button onclick="submitAssignment('{{ assignment.title }}', '{{ loop.index }}')">Submit</button>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <a href="{{ url_for('view_submission', assignment_title=assignment.title) }}" class="view-submission">View Submission</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 
+    <div id="chatbot-icon">
+        <img src="/static/chatbot.jpg" alt="Chatbot">
+    </div>
+
     <script>
-        function submitAssignment() {
-            const fileInput = document.getElementById('assignment');
+        function submitAssignment(assignmentTitle, index) {
+            const fileInput = document.getElementById('submission-' + index);
             const file = fileInput.files[0];
 
             if (!file) {
@@ -97,6 +161,7 @@
 
             const formData = new FormData();
             formData.append('file', file);
+            formData.append('title', assignmentTitle);
 
             fetch('/submit_assignment', { // Replace with your backend endpoint
                 method: 'POST',
@@ -104,10 +169,8 @@
             })
             .then(response => response.json())
             .then(data => {
-                const scoreArea = document.getElementById('score-area');
-                const scoreText = document.getElementById('score-text');
-                scoreText.textContent = data.score; // Assuming the backend returns a JSON with 'score'
-                scoreArea.style.display = 'block';
+                alert('Submission successful.');
+                window.location.reload(); // Reload the page to update the assignment list
             })
             .catch(error => {
                 console.error('Error:', error);

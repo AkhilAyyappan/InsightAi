@@ -79,6 +79,11 @@ def assignments():
 def resources():
     return render_template('resources.html')
 
+@app.route('/messages')
+def messages():
+    return render_template('messages.html')
+
+
 #teacher routes
 
 @app.route('/tindex')
@@ -134,6 +139,8 @@ def student_performance():
 @app.route('/logout')
 def logout():
     return redirect(url_for('login'))
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

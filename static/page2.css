@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 0.35px;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    padding: 30px 80px;
+    background-color: #dee5ea;
+    display: flex;
+    gap: 60px;
+    overflow-y: hidden;
+}
+
+.col1{
+    width: 50%;
+    height: 100vh;
+}
+.profile,.leaderboard{
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+}
+.profile_detail{
+    width: 100%;
+}
+.profile{
+    height: 25%;
+    display: flex;
+    gap: 27px;
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.image{
+    width: 230px;
+}
+.image img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.box{
+    margin-top: 12px;
+    background-color: #F0F4F7;
+    width: 100%;
+    height: 85px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 0.7rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.leaderboard{
+    margin-top: 20px;
+    display: flex;
+    gap: 25px;
+}
+.leaderboard_box{
+    width: 33%;
+    height: 150px;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 0.7rem;
+    background-color: #F0F4F7;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.leaderboard_box img{
+    width: 35px;
+    margin-bottom: 10px;
+}
+hr {  
+    height: 2px;  
+    background-color: black;  
+    border: none;  
+    margin-bottom: 10px;
+}  
+
+.achievement_box{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F0F4F7;
+    border-radius: 0.7rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.row{
+    display: flex;
+    align-items: center;
+}
+.achievement_box .img {
+    width: 100px;
+    height: 50px;
+    border-right: 2px solid black;
+    display: grid;
+    place-items: center;
+}
+.achievement_box img{
+    width: 45%;
+}
+
+.details{
+    width: 100%;
+}
+.line1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col2{
+    width: 50%;
+    height: 100vh;
+}
+
+.dashboard{
+    margin-bottom: 20px;
+}
+
+.col2_box{
+    height: 32vh;
+    padding: 20px;
+    margin-top: 12px;
+    background-color: #F0F4F7;
+    border-radius: 0.7rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.line{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.part1{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.part1 img{
+    width: 43px;
+    border-radius: 50%;
+}
+
+button{
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 12px;
+    border: none;
+    background-color: #445ce1;
+    color: white;
+    transition: all 0.2s ease;
+}
+button img{
+    width: 20px;
+}
+
+.icn_btn{
+    width: auto;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    padding: 5px 20px;
+    background-color: #445ce1;
+    color: white;
+    transition: all 0.2s ease;
+}
+button:hover{
+    background-color: #354ab2;
+}
+button:active{
+    scale: 1.05;
+}
+span{
+    position: relative;
+    top: -4px;
+    margin-left: 5px
+}
+.Explore{
+    width: auto;
+    padding: 5px 20px;
+    margin: 10px 40%;
+    background-color: #3F51B5;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.btn{
+    width: 200px;
+    margin-top: 30px;
+}
+.c h2{
+    font-size: 22px;
+    margin-bottom: 3px;
+}
+.c h3{
+    font-size: 17px;
+    color: rgb(110, 109, 109);
+}
+.leaderboard_box h4{
+    color: rgb(110, 109, 109);
+    font-weight: 700;
+    font-size: 15px;
+}
+.col2_box hr,.achievement_box hr{
+    height: 1.3px;  
+    background-color: rgb(182, 180, 180);  
+    border: none;  
+    margin: 5px;
+}
+.achievement_box h2,.achievement_box h4{
+    margin-top: 8px;
+    padding: 0 20px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.achievement_box h3{
+    padding: 0 20px;
+    color: rgb(110, 109, 109);
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.main_hd{
+    font-size:25px;
+}
+.prf{
+    width: auto;
+    padding: 5px 20px;
+}

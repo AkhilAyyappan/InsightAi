@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Insight AI</title>
+    <link rel="stylesheet" href="/static/style7.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <nav>
+        <div class="part1">
+            <a href="#" class="logo">
+                <img src="/static/icon.png" alt="Insight AI Logo">Insight AI</a>
+            <a href="/students">Dashboard</a>
+            <a href="/assignments">Assignments</a>
+            <a href="/resources">Resources</a>
+            <a href="/messages">Messages</a>
+            
+            <a href="/login">Logout</a>
+        </div>
+        <div class="part2">
+            <a href="#">Parent Login</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="chat-panel">
+            <h3>Chat</h3>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        <div class="meeting-panel">
+            <h3>Upcoming Meetings</h3>
+            <div id="meetingList">
+                <div class="meeting-item">
+                    <h4>Meeting with AI Team</h4>
+                    <p>Date: 2024-07-10</p>
+                    <p>Time: 10:00 AM</p>
+                    <button>Join Meeting</button>
+                </div>
+                <div class="meeting-item">
+                    <h4>Project Review</h4>
+                    <p>Date: 2024-07-15</p>
+                    <p>Time: 2:00 PM</p>
+                    <button>Join Meeting</button>
+                </div>
+                <!-- Add more meetings as needed -->
+            </div>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+
+            if (chatInput.value.trim() === '') {
+                alert('Please type a message.');
+                return;
+            }
+
+            const message = document.createElement('div');
+            message.textContent = chatInput.value;
+            chatMessages.appendChild(message);
+
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    </script>
+</body>
+</html>

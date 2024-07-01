@@ -6,6 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/static/style.css">
+    <style>
+        #chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .hover-effect {
+            transition: opacity 0.3s ease;
+        }
+        .hover-effect:hover {
+            opacity: 0.7;
+        }
+        }
+
+        #chatbot-icon img {
+            width: 70%;
+            height: 70%;
+        }
+
+        #chatbot-icon:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,10 +48,9 @@
             <a href="/assignments">Assignments</a>
             <a href="/resources">Resources</a>
             <a href="#">Messages</a>
-            <a href="/profile">Profile</a>
         </div>
         <div class="part2">
-            <a href="#">Parent Login</a>
+            <a href="/login">Log out</a>
         </div>
     </nav>
     <div class="container">
@@ -43,6 +73,10 @@
                 <button><a href="/resources">Access Resources</a></button>
             </div>
         </div>
+    </div>
+
+    <div id="chatbot-icon">
+        <img src="/static/chatbot.jpg" alt="Interactive Core">
     </div>
 </body>
 
