@@ -9,10 +9,8 @@
 <body>
     <div class="flex">
         <nav>
-            <div class="logo">
-                <img src="icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
-                <span>Feedback</span>
-            </div>
+            <a href="/tindex" class="logo">
+                <img src="/static/icon.png" alt="">InsightLearn</a>
             <div class="part1">
                 <a href="/tindex">Home</a>
                 <a href="#">Classes</a>
@@ -28,11 +26,26 @@
             </div>
             <div class="content">
                 <form action="#" method="post" class="feedback-form">
-                    <label for="assignment-text">Assignment Text</label>
-                    <textarea id="assignment-text" name="assignment-text" rows="10" required></textarea>
+                    <label for="student-select">Select Student</label>
+                    <select id="student-select" name="student-select" required>
+                        <option value="" disabled selected>Select a student</option>
+                        <!-- Add student options here -->
+                        <option value="student1">Student 1</option>
+                        <option value="student2">Student 2</option>
+                        <option value="student3">Student 3</option>
+                    </select>
+
+                    <label for="assignment-select">Select Assignment</label>
+                    <select id="assignment-select" name="assignment-select" required>
+                        <option value="" disabled selected>Select an assignment</option>
+                        <!-- Add assignment options here -->
+                        <option value="assignment1">Assignment 1</option>
+                        <option value="assignment2">Assignment 2</option>
+                        <option value="assignment3">Assignment 3</option>
+                    </select>
 
                     <div class="button-container">
-                        <button type="button" class="ai-feedback-btn" onclick="generateFeedback()">Generate AI Feedback</button>
+                        <button type="button" class="ai-feedback-btn" onclick="generateFeedback()">Generate Feedback<sup>AI</sup></button>
                     </div>
 
                     <div class="feedback-output" id="feedback-output">
@@ -48,7 +61,7 @@
 
     <script>
         function generateFeedback() {
-            // Simulate AI-generated questions based on the assignment text
+            // Simulate AI-generated questions based on the selected assignment
             const questions = [
                 "What is the main topic of the assignment?",
                 "Can you summarize the key points?",

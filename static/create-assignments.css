@@ -21,6 +21,10 @@ body {
 }
 
 nav {
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 9vh;
     padding: 25px;
     display: flex;
@@ -29,12 +33,14 @@ nav {
     background-color: rgb(90, 90, 213);
     width: 100%;
 }
+
 .logo {
     font-size: 25px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .logo img {
     width: 45px;
     object-fit: cover;
@@ -45,6 +51,7 @@ nav {
     align-items: center;
     gap: 30px;
 }
+
 a {
     text-decoration: none;
     color: white;
@@ -98,21 +105,75 @@ a {
 
 .assignment-form .submit-btn {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 12px;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 25px;
     border: none;
-    background-color: #445ce1;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
     color: white;
-    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
 .assignment-form .submit-btn:hover {
-    background-color: #354ab2;
+    background: linear-gradient(90deg, #5f77aa, #2d4e9f);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .assignment-form .submit-btn:active {
-    scale: 1.05;
+    transform: scale(0.98);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.assignment-form .submit-btn::before, .assignment-form .submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    animation: star-animation 2s infinite;
+}
+
+.assignment-form .submit-btn::before {
+    animation-delay: 0s;
+}
+
+.assignment-form .submit-btn::after {
+    animation-delay: 1s;
+}
+
+.assignment-form .submit-btn::after {
+    top: 30%;
+    left: 30%;
+}
+
+
+.assignment-form .submit-btn::before, .assignment-form .submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    animation: star-animation 2s infinite;
+}
+
+.assignment-form .submit-btn::before {
+    animation-delay: 0s;
+}
+
+.assignment-form .submit-btn::after {
+    animation-delay: 1s;
 }
 
 .logout-btn {

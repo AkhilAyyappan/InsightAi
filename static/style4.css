@@ -21,7 +21,10 @@ body{
 }
 
 nav{
+    position: fixed;
+    top: 0;
     height: 9vh;
+    width: 100%;
     padding: 25px;
     display: flex;
     justify-content: space-between;
@@ -56,7 +59,7 @@ a{
 }
 
 .row1{
-    height: 55%;
+    height: 65%;
     font-size: 21px;
     display: flex;
     flex-direction: column;
@@ -105,6 +108,54 @@ button:hover{
 button:active{
     scale: 1.05;
 }
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.4), 0 0 10px rgba(0, 255, 255, 0.2), 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.6), 0 0 45px rgba(0, 255, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.4), 0 0 10px rgba(0, 255, 255, 0.2), 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+}
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 60px; /* Adjust this value to move the button up */
+    right: 40px; /* Adjust this value to move the button to the left */
+    width: 70px; /* Adjusted to include space for the glow */
+    height: 70px; /* Adjusted to include space for the glow */
+    cursor: pointer;
+    z-index: 1000;
+    border: none; /* Remove default button border */
+    background: none; /* Remove default button background */
+    padding: 0; /* Remove default button padding */
+    outline: none; /* Remove outline when button is focused */
+    animation: pulse 2s infinite; /* Apply the pulse animation */
+    border-radius: 50%; /* Ensure the glow is round */
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.chatbot-icon img {
+    width: 120%; /* Adjusted width of the image */
+    height: 120%; /* Adjusted height of the image */
+    object-fit: cover;
+    display: block; /* Ensure no extra space is added around the image */
+    border-radius: 50%; /* Ensure the image is round */
+}
+
+.chatbot-icon:hover,
+.chatbot-icon:focus,
+.chatbot-icon:active {
+    background: none; /* Ensure no background appears on hover, focus, or active states */
+    border: none; /* Ensure no border appears on hover, focus, or active states */
+    outline: none; /* Ensure no outline appears on hover, focus, or active states */
+}
+
 
 /*dashboard--page*/
 
