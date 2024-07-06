@@ -74,6 +74,7 @@
             border-radius: 5px;
             background-color: #f9f9f9;
         }
+<<<<<<< HEAD
         #chatbot-icon {
             position: fixed;
             bottom: 20px;
@@ -97,6 +98,8 @@
         #chatbot-icon:hover {
             background-color: #0056b3;
         }
+=======
+>>>>>>> 78581914a448c306d61d96a9a417c2d5a51d9e76
     </style>
 </head>
 <body>
@@ -124,6 +127,7 @@
                             <div class="file-list">
                                 <h4>Files:</h4>
                                 <ul>
+<<<<<<< HEAD
                                     <a href="{{ url_for('static', filename='uploads/' + assignment.files) }}">{{ assignment.files }}</a>
                                 </ul>
                             </div>
@@ -138,6 +142,25 @@
                             <div class="form-group">
                                 <a href="{{ url_for('view_submission', assignment_title=assignment.title) }}" class="view-submission">View Submission</a>
                             </div>
+=======
+                                    
+                                    <a href="{{ url_for('static', filename='uploads/' + assignment.files) }}">{{ assignment.files }}</a>
+                                    
+                                </ul>
+                            </div>
+                        {% endif %}
+                        
+                        {% if not assignment.has_submission %}
+                           <div class="form-group">
+                              <label for="submission-{{ loop.index }}">Upload Submission:</label>
+                              <input type="file" id="submission-{{ loop.index }}" accept=".pdf">
+                              <button onclick="submitAssignment('{{ assignment.title }}', '{{ loop.index }}')">Submit</button>
+                           </div>
+                        {% else %}
+                           <div class="form-group">
+                              <a href="{{ url_for('view_submission', assignment_title=assignment.title) }}" class="view-submission">View Submission</a>
+                           </div>
+>>>>>>> 78581914a448c306d61d96a9a417c2d5a51d9e76
                         {% endif %}
                     </div>
                 {% endfor %}
@@ -150,8 +173,13 @@
     </div>
 
     <script>
+<<<<<<< HEAD
         function submitAssignment(assignmentTitle, index) {
             const fileInput = document.getElementById('submission-' + index);
+=======
+        function submitAssignment() {
+            const fileInput = document.getElementById('submission-'+ index);
+>>>>>>> 78581914a448c306d61d96a9a417c2d5a51d9e76
             const file = fileInput.files[0];
 
             if (!file) {

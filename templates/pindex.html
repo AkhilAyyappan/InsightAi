@@ -11,39 +11,41 @@
 <body>
     <nav>
         <div class="part1">
-            <a href="{{ url_for('pindex') }}" class="logo">
-                <img src="/static/icon.png" alt="">Insight AI</a>
-            <a href="{{ url_for('pdashboard') }}">Dashboard</a>
-            <a href="{{ url_for('passignments') }}">Assignments</a>
-            <a href="{{ url_for('presources') }}">Resources</a>
-            <a href="{{ url_for('pmessages') }}">Messages</a>
-            <a href="{{ url_for('pprofile') }}">Profile</a>
+            <a href="/pindex" class="logo">
+                <img src="/static/icon.png" alt="">InsightLearn</a>
+            <a href="/pdashboard">Dashboard</a>
+            <a href="/passignments">Assignments</a>
+            <a href="/presources">Resources</a>
+            <a href="/pmessages">Messages</a>
+            <a href="/pprofile">Profile</a>
         </div>
         <div class="part2">
-            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="/logout">Logout</a>
         </div>
     </nav>
     <div class="container">
         <div class="row1">
-            <h1>Welcome to Insight AI</h1>
-            <h2>Parent Login</h2>
+            <h2>Welcome, Mr. Subbu</h2>
             <img src="/static/img.webp" alt="">
         </div>
         <div class="row2">
             <div class="cards flex">
                 <h1>Dashboard</h1>
-                <button onclick="location.href='{{ url_for('pdashboard') }}'">Go to Dashboard</button>
+                <button onclick="location.href='/pdashboard'">Go to Dashboard</button>
             </div>
             <div class="cards flex">
                 <h1>Assignments</h1>
-                <button onclick="location.href='{{ url_for('passignments') }}'">View Assignments</button>
+                <button onclick="location.href='passignments'">View Assignments</button>
             </div>
             <div class="cards flex">
                 <h1>Resources</h1>
-                <button onclick="location.href='{{ url_for('presources') }}'">Access Resources</button>
+                <button onclick="location.href='presources'">Access Resources</button>
             </div>
         </div>
     </div>
+    <button class="chatbot-icon" onclick="location.href='#'">
+        <img src="/static/chatbot.png" alt="Chatbot">
+    </button>
 </body>
 
 </html>

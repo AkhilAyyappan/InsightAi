@@ -21,6 +21,8 @@ body {
 }
 
 nav {
+    position:fixed;
+    top: 0;
     height: 9vh;
     padding: 25px;
     display: flex;

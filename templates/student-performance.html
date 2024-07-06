@@ -9,17 +9,15 @@
 <body>
     <div class="flex">
         <nav>
-            <div class="logo">
-                <img src="icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
-                <span>Student Performance</span>
-            </div>
+            <a href="/tindex" class="logo">
+                <img src="/static/icon.png" alt="">InsightLearn</a>
             <div class="part1">
-                <a href="{{ url_for('tindex') }}l">HOME</a>
+                <a href="/tindex">HOME</a>
                 <a href="#">Classes</a>
-                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="/timetable">Timetable</a>
                 <a href="#">Reports</a>
                 <a href="#">Notifications</a>
-                <a href="{{ url_for('logout') }}">Logout</a>
+                <a href="/logout">Logout</a>
             </div>
         </nav>
         <div class="container">
@@ -28,19 +26,10 @@
                 <input type="text" placeholder="Search student..." class="search-bar">
             </div>
             <div class="content">
-                <div class="student-list">
-                    <h2>Students</h2>
-                    <ul>
-                        <li><a href="#">John Doe</a></li>
-                        <li><a href="#">Jane Smith</a></li>
-                        <li><a href="#">Michael Johnson</a></li>
-                        <!-- Add more students as needed -->
-                    </ul>
-                </div>
-                <div class="student-details">
+                    <div class="student-details">
                     <h2>Student Details</h2>
                     <div class="details">
-                        <img src="student.png" alt="Student Image"> <!-- Replace with student image link -->
+                        <img src="static\image (1).png" alt="Student Image"> <!-- Replace with student image link -->
                         <p><strong>Name:</strong> John Doe</p>
                         <p><strong>ID:</strong> 123456</p>
                         <p><strong>Grade:</strong> 10</p>
@@ -58,9 +47,8 @@
                         <p>Absent: 5%</p>
                     </div>
                     <div class="behavior">
-                        <h2>Behavior</h2>
-                        <p>Positive: 5</p>
-                        <p>Negative: 1</p>
+                        <h2>Action Plan</h2>
+                        <p>This student has shown good progress in this course. However, we need to encourage the student to take more quizzes to improve their understanding. Suggestions include setting reminders, offering incentives, and providing additional resources.</p>
                     </div>
                 </div>
             </div>

@@ -9,17 +9,15 @@
 <body>
     <div class="flex">
         <nav>
-            <div class="logo">
-                <img src="icon.png" alt="Logo"> <!-- Replace "logo.png" with your logo image link -->
-                <span>Assignment</span>
-            </div>
+            <a href="/tindex" class="logo">
+                <img src="/static/icon.png" alt="">InsightLearn</a>
             <div class="part1">
-                <a href="{{ url_for('tindex') }}">Home</a>
+                <a href="/tindex">Home</a>
                 <a href="#">Classes</a>
-                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="/timetable">Timetable</a>
                 <a href="#">Reports</a>
                 <a href="#">Notifications</a>
-                <a href="{{ url_for('logout') }}">Logout</a>
+                <a href="/logout">Logout</a>
             </div>
         </nav>
         <div class="container">
@@ -27,7 +25,7 @@
                 <h1>Create Assignments</h1>
             </div>
             <div class="content">
-                <form action="#" method="post" class="assignment-form">
+                <form action="/create_assignments" method="post" class="assignment-form" enctype="multipart/form-data">
                     <label for="title">Assignment Title</label>
                     <input type="text" id="title" name="title" required>
 
@@ -40,7 +38,7 @@
                     <label for="file-upload">Upload Files</label>
                     <input type="file" id="file-upload" name="file-upload" multiple>
 
-                    <button type="submit" class="submit-btn">Create Assignment</button>
+                    <button type="submit" class="submit-btn">Create Assignment<sup>AI</sup></button>
                 </form>
             </div>
         </div>

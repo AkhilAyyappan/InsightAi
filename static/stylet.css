@@ -21,6 +21,10 @@ body {
 }
 
 nav {
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 9vh;
     padding: 25px;
     display: flex;
@@ -58,7 +62,7 @@ a {
 }
 
 .row1 {
-    height: 55%;
+    height: 65%;
     font-size: 21px;
     display: flex;
     flex-direction: column;

@@ -21,6 +21,10 @@ body {
 }
 
 nav {
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 9vh;
     padding: 25px;
     display: flex;
@@ -29,12 +33,14 @@ nav {
     background-color: rgb(90, 90, 213);
     width: 100%;
 }
+
 .logo {
     font-size: 25px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .logo img {
     width: 45px;
     object-fit: cover;
@@ -45,6 +51,7 @@ nav {
     align-items: center;
     gap: 30px;
 }
+
 a {
     text-decoration: none;
     color: white;
@@ -103,15 +110,19 @@ a {
 .student-details .details {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start; /* Align items to the left */
+    text-align: left;
 }
 
 .student-details .details img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.student-details .details p {
+    margin: 5px 0;
 }
 
 .student-details .grades, .attendance, .behavior {
@@ -127,6 +138,7 @@ a {
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
 }
+
 .logout-btn:hover {
     background: #445ce1;
     color: #fff;

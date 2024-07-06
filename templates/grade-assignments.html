@@ -9,17 +9,15 @@
 <body>
     <div class="flex">
         <nav>
-            <div class="logo">
-                <img src="icon.png" alt=""> <!-- Replace "logo.png" with your logo image link -->
-                <span>Grade</span>
-            </div>
+            <a href="/tindex" class="logo">
+                <img src="/static/icon.png" alt="">InsightLearn</a>
             <div class="part1">
-                <a href="{{ url_for('tindex') }}">Home</a>
+                <a href="/tindex">Home</a>
                 <a href="#">Classes</a>
-                <a href="{{ url_for('timetable') }}">Timetable</a>
+                <a href="/timetable">Timetable</a>
                 <a href="#">Reports</a>
                 <a href="#">Notifications</a>
-                <a href="{{ url_for('logout') }}">Logout</a>
+                <a href="/logout">Logout</a>
             </div>
         </nav>
         <div class="container">
