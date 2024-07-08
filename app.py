@@ -27,6 +27,10 @@ def login():
     return render_template('login.html')
 
 # Parent routes
+@app.route('/chatbot')
+def chatbot():
+    return render_template('chatbot.html')
+
 @app.route('/pindex')
 def pindex():
     return render_template('pindex.html')

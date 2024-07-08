@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doubt Clearance Chat Bot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="part1">
+            <a href="students.html" class="logo">
+                <img src="/static/icon.png" alt="Insight AI Logo">Insight AI</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/assignments">Assignments</a>
+            <a href="/resources">Resources</a>
+            <a href="#">Messages</a>
+        </div>
+        <div class="part2">
+            <a href="/login">Log out</a>
+        </div>
+    </nav>
+
+    <div class="chat-container">
+        <h1>Doubt Clearance Chat Bot</h1>
+        <div class="chat-header">
+            <img src="/static/chatbot.png" alt="Interactive Core">
+            <h2>Interactive Core</h2>
+        </div>
+        <div class="chat-log" id="chat-log">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <form id="chat-form">
+            <input type="text" id="message-input" placeholder="Type your doubt...">
+            <button type="button" id="send-button">Send</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript for chat functionality
+        const chatLog = document.getElementById('chat-log');
+        const chatForm = document.getElementById('chat-form');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const message = messageInput.value.trim();
+            if (message !== '') {
+                const userMessage = document.createElement('li');
+                userMessage.className = 'user';
+                userMessage.innerHTML = `<span>${message}</span>`;
+                chatLog.appendChild(userMessage);
+
+                messageInput.value = '';
+
+                setTimeout(() => {
+                    const botMessage = document.createElement('li');
+                    botMessage.className = 'bot';
+                    botMessage.innerHTML = `<span>I'm here to help! What's your doubt about?</span>`;
+                    chatLog.appendChild(botMessage);
+
+                    chatLog.scrollTop = chatLog.scrollHeight; // Auto scroll to bottom
+                }, 500); // Simulate bot response delay
+            }
+        });
+    </script>
+</body>
+
+</html>
