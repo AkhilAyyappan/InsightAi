@@ -23,36 +23,108 @@
         <div class="container">
             <div class="header">
                 <h1>Student Performance</h1>
-                <input type="text" placeholder="Search student..." class="search-bar">
+                <div class="search-bar">
+                    <select id="student-select">
+                        <option value="" disabled selected>Select Student</option>
+                        <!-- Add student options here -->
+                        <option value="123456">John Subbu - 123456</option>
+                        <option value="234567">Jane Smith - 234567</option>
+                        <!-- Add more student options as needed -->
+                    </select>
+                </div>
             </div>
             <div class="content">
-                    <div class="student-details">
+                <div id="student-details" class="student-details" style="display: none;">
                     <h2>Student Details</h2>
                     <div class="details">
-                        <img src="static\image (1).png" alt="Student Image"> <!-- Replace with student image link -->
-                        <p><strong>Name:</strong> John Doe</p>
-                        <p><strong>ID:</strong> 123456</p>
-                        <p><strong>Grade:</strong> 10</p>
+                        <img src="static/image (1).png" alt="Student Image"> <!-- Replace with student image link -->
+                        <p><strong>Name:</strong> <span id="student-name"></span></p>
+                        <p><strong>ID:</strong> <span id="student-id"></span></p>
+                        <p><strong>Grade:</strong> <span id="student-grade"></span></p>
                     </div>
-                    <div class="grades">
-                        <h2>Grades</h2>
-                        <p>Math: A</p>
-                        <p>Science: B+</p>
-                        <p>History: A-</p>
-                        <!-- Add more grades as needed -->
-                    </div>
-                    <div class="attendance">
-                        <h2>Attendance</h2>
-                        <p>Present: 95%</p>
-                        <p>Absent: 5%</p>
-                    </div>
-                    <div class="behavior">
-                        <h2>Action Plan</h2>
-                        <p>This student has shown good progress in this course. However, we need to encourage the student to take more quizzes to improve their understanding. Suggestions include setting reminders, offering incentives, and providing additional resources.</p>
+                    <div class="subject-details">
+                        <h2>Subject Details<sup>AI</sup></h2>
+                        <!-- Subject details will be dynamically inserted here -->
+                        <div id="subjects"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        const students = {
+            "123456": {
+                "name": "John Subbu",
+                "id": "123456",
+                "grade": "7",
+                "subjects": {
+                    "Math": {
+                        "completionRate": "20.86%",
+                        "performanceStatus": "Average",
+                        "actionPlan": "This student has consistently improved on learning. However we need to focus more on how to get the student more interested in this course. Suggestions include scheduled, focused learning plans, one to one interaction, repetitive tests."
+                    },
+                    "Science": {
+                        "completionRate": "45.32%",
+                        "performanceStatus": "Good",
+                        "actionPlan": "Continue to encourage participation in practical experiments and group activities."
+                    }
+                }
+            },
+            "234567": {
+                "name": "Jane Smith",
+                "id": "234567",
+                "grade": "10",
+                "subjects": {
+                    "History": {
+                        "completionRate": "75.50%",
+                        "performanceStatus": "Excellent",
+                        "actionPlan": "Encourage participation in discussions and research projects to further enhance understanding."
+                    },
+                    "Math": {
+                        "completionRate": "60.00%",
+                        "performanceStatus": "Good",
+                        "actionPlan": "Regular practice and additional tutoring sessions to maintain progress."
+                    }
+                }
+            }
+        };
+
+        document.getElementById('student-select').addEventListener('change', function() {
+            var selectedValue = this.value;
+            var studentDetails = document.getElementById('student-details');
+            var studentName = document.getElementById('student-name');
+            var studentId = document.getElementById('student-id');
+            var studentGrade = document.getElementById('student-grade');
+            var subjectsDiv = document.getElementById('subjects');
+            
+            if (selectedValue && students[selectedValue]) {
+                var student = students[selectedValue];
+                studentName.textContent = student.name;
+                studentId.textContent = student.id;
+                studentGrade.textContent = student.grade;
+
+                // Clear previous subjects
+                subjectsDiv.innerHTML = '';
+
+                // Display subjects
+                for (var subject in student.subjects) {
+                    var subjectDetail = student.subjects[subject];
+                    var subjectElement = document.createElement('div');
+                    subjectElement.className = 'subject';
+                    subjectElement.innerHTML = `
+                        <h3>${subject}</h3>
+                        <p><strong>Completion Rate:</strong> ${subjectDetail.completionRate}</p>
+                        <p><strong>Performance Status:</strong> ${subjectDetail.performanceStatus}</p>
+                        <p><strong>Action Plan:</strong> ${subjectDetail.actionPlan}</p>
+                    `;
+                    subjectsDiv.appendChild(subjectElement);
+                }
+
+                studentDetails.style.display = 'block';
+            } else {
+                studentDetails.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

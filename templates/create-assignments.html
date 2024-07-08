@@ -17,7 +17,7 @@
                 <a href="/timetable">Timetable</a>
                 <a href="#">Reports</a>
                 <a href="#">Notifications</a>
-                <a href="/logout">Logout</a>
+                <a href="/logout" class="logout-btn">Logout</a>
             </div>
         </nav>
         <div class="container">
@@ -25,23 +25,57 @@
                 <h1>Create Assignments</h1>
             </div>
             <div class="content">
-                <form action="/create_assignments" method="post" class="assignment-form" enctype="multipart/form-data">
-                    <label for="title">Assignment Title</label>
-                    <input type="text" id="title" name="title" required>
+                <div class="form-section">
+                    <form action="/create_assignments" method="post" class="assignment-form" enctype="multipart/form-data">
+                        <label for="title">Assignment Title</label>
+                        <input type="text" id="title" name="title" required>
 
-                    <label for="description">Description</label>
-                    <textarea id="description" name="description" rows="4" required></textarea>
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="4" required></textarea>
 
-                    <label for="due-date">Due Date</label>
-                    <input type="date" id="due-date" name="due-date" required>
+                        <label for="due-date">Due Date</label>
+                        <input type="date" id="due-date" name="due-date" required>
 
-                    <label for="file-upload">Upload Files</label>
-                    <input type="file" id="file-upload" name="file-upload" multiple>
+                        <label for="file-upload">Upload Files</label>
+                        <input type="file" id="file-upload" name="file-upload" multiple>
 
-                    <button type="submit" class="submit-btn">Create Assignment<sup>AI</sup></button>
-                </form>
+                        <button type="button" id="generate-questions-btn" class="submit-btn">Generate Questions<sup>AI</sup></button>
+                    </form>
+                </div>
+                <div class="generated-questions">
+                    <!-- Placeholder for generated questions -->
+                    <h2>Generated Questions</h2>
+                    <ul id="questions-list">
+                        <!-- Display generated questions here -->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('generate-questions-btn').addEventListener('click', function() {
+            // Simulate generating questions (replace with actual logic)
+            var questions = [
+                "1. Explain the process of photosynthesis.",
+                "2. What are the main components required for photosynthesis?",
+                "3. Discuss the role of chlorophyll in photosynthesis.",
+                "4. Compare C3 and C4 photosynthesis.",
+                "5. How do environmental factors such as light intensity and temperature affect photosynthesis?"
+                // Add more questions as needed
+            ];
+
+            // Clear previous questions if any
+            var questionList = document.getElementById('questions-list');
+            questionList.innerHTML = '';
+
+            // Populate the question list
+            questions.forEach(function(question) {
+                var li = document.createElement('li');
+                li.textContent = question;
+                questionList.appendChild(li);
+            });
+        });
+    </script>
 </body>
 </html>
