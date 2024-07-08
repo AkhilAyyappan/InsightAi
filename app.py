@@ -27,9 +27,9 @@ def login():
     return render_template('login.html')
 
 # Parent routes
-@app.route('/chatbot')
-def chatbot():
-    return render_template('chatbot.html')
+@app.route('/pchatbot')
+def pchatbot():
+    return render_template('pchatbot.html')
 
 @app.route('/pindex')
 def pindex():
@@ -76,6 +76,10 @@ def pview_feedback_grades():
 @app.route('/index')
 def index():
     return render_template('students.html')
+
+@app.route('/chatbot')
+def chatbot():
+    return render_template('chatbot.html')
 
 @app.route('/dashboard')
 def dashboard():
